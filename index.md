@@ -1,5 +1,73 @@
 ## Welcome to Core CMS and Extensions guide documents
 
+### CMS services and parser
+
+The CMS parser is just a simple serialization of json objects. It will convert json string to a data class objects. But the unique part of this is it will dynamically build an object based on Schema.
+
+The currently supported schemas are: 
+
+```kotlin
+MOBILE("https://cebu.onecms.slot.mobile")
+PAGE("https://cebu.onecms.content.page")
+DYNAMIC_PAGE("https://cebu.onecms.content.dynamicpage")
+SECTION_BLOCK("https://cebu.onecms.content.sectionblock")
+IMAGE_AND_TEXT("https://cebu.onecms.content.imageandtext")
+MESSAGE("https://cebu.onecms.content.message")
+IMAGE("https://cebu.onecms.content.image")
+LINK("https://cebu.onecms.content.link")
+BANNER("https://cebu.onecms.content.banner")
+IMAGE_CAROUSEL("https://cebu.onecms.content.imagecarousel")
+BANNER_CAROUSEL("https://cebu.onecms.content.bannercarousel")
+PROMOTIONAL_IMAGE("https://cebu.onecms.content.promotionalimage")
+TEXT_CONTENT("https://cebu.onecms.content.textcontent")
+TRAVEL_REMINDER("https://cebu.onecms.content.travelreminder")
+HEADER("https://cebu.onecms.content.header")
+SOCIAL_MEDIA_LINKS("https://cebu.onecms.content.socialmedialinks")
+HERO_BANNER("https://cebu.onecms.content.herobanner")
+NAVIGATION_MENU("https://cebu.onecms.content.navigationmenu")
+BANNER_NAVIGATION_LINKS("https://cebu.onecms.content.bannernavigationlinks")
+BANNER_NAVIGATION_LINKS_AND_TEXT("https://cebu.onecms.content.bannernavigationlinksandtextcontent")
+IMAGE_GRID("https://cebu.onecms.content.imagegrid")
+IMAGE_GRID_CAROUSEL("https://cebu.onecms.content.imagegridcarousel")
+FLIGHT_MAP("https://cebu.onecms.content.flightmap")
+REGION("https://cebu.onecms.content.region")
+ARTICLE_LIST("https://cebu.onecms.content.articlelist")
+ARTICLE("https://cebu.onecms.content.article")
+IMAGE_LINK("http://bigcontent.io/cms/schema/v1/core#/definitions/image-link")
+LOCALIZED_VALUE("http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value")
+```
+
+Example flow:
+
+We have this example meta json content, the `_meta` and `schema` value will use as reference and to create an object dynamically.
+
+```json
+{
+  "content": {
+      "_meta": {
+          "name": "Prepaid Baggage Mobile App Slot",
+          "schema": "https://cebu.onecms.slot.mobile",
+          "deliveryKey": "addons/prepaid-baggage",
+          "deliveryId": "dbc74e0f-3fb7-4c8e-a3db-1fbc491978e8"
+      },
+      "content": []
+  }
+}
+```
+
+In the json content above. `MobileContent` data class is use as an object
+
+```kotlin
+@Serializable
+data class MobileContent(
+    @SerialName("_meta")
+    override val meta: Meta,
+    val content: List<BaseContent>
+) : BaseContent()
+```
+
+Assume the field `content` is a list of meta content. The parser will use data class `BaseContent` as a source of magic. It will search for a registered schema and build it dynamically. 
+
 ### Extensions
 
 Custom created extensions
