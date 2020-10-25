@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+## Welcome to core documents
 
-You can use the [editor on GitHub](https://github.com/ronjunevaldoz/doc.cebupacific.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Extensions
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Custom created extensions
 
-### Markdown
+### Save data object classes in preferences
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+In your shared preference, when you need to save an object class just call `saveToJson(key, value)`. Parameter `key` is a value of string use to assign as an identifier and `value` is any instance of an object classes.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```kotlin
+  pref.saveToJson(key, value)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+In your shared preference, when you need to retrieve an object class just call `jsonToOject<T>(key)`. Parameter `key` is a value of string use to assign as an identifier and `T` is to specify which data class you have previously use to save in shared preference otherwise it will return `null`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ronjunevaldoz/doc.cebupacific.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```kotlin
+  pref.jsonToObject<T>(key)
+```
 
-### Support or Contact
+For example:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```kotlin
+  data class User(val id: String)
+  
+  val prefs = // SharedPreference
+  const val KEY_USER = "key_user"
+  
+  val myUser = User("my-id")
+  
+  prefs.saveToJson(KEY_USER, myUser)
+  // the object will be added in shared preference .xml and formatted as json string
+  // { "id" : "my-user" }
+  
+  val user = prefs.jsonToObject<User>(KEY_USER)
+  // the object will be retrieve frin shared preference .xml and formatted as specified data class (in this case `User`)
+  // { "id" : "my-user" }
+```
