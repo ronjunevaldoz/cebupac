@@ -1,10 +1,10 @@
-## Welcome to core documents
+## Welcome to Core CMS and Extensions guide documents
 
 ### Extensions
 
 Custom created extensions
 
-### Save data object classes in preferences
+### Saving and retriving data object classes in shared preferences
 
 In your shared preference, when you need to save an object class just call `saveToJson(key, value)`. Parameter `key` is a value of string use to assign as an identifier and `value` is any instance of an object classes.
 
