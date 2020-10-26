@@ -1,6 +1,6 @@
-## Welcome to Core CMS and Extensions guide documents
+# Welcome to Core CMS and Extensions guide documents
 
-### CMS services and parser
+## CMS services and parser
 
 The CMS parser is just a simple serialization of json objects. It will convert json string to a data class objects. But the unique part of this is it will dynamically build an object based on Schema.
 
@@ -68,11 +68,11 @@ data class MobileContent(
 
 Assume the field `content` is a list of meta content. The parser will use data class `BaseContent` as a source of magic. It will search for a registered schema and build it dynamically. 
 
-### Extensions
+# Extensions and Utilities
 
 Custom created extensions
 
-### Saving and retriving data object classes in shared preferences
+### Saving and Retrieving data object classes in shared preferences
 
 In your shared preference, when you need to save an object class just call `saveToJson(key, value)`. Parameter `key` is a value of string use to assign as an identifier and `value` is any instance of an object classes.
 
