@@ -5,37 +5,37 @@
 The CMS parser is just a simple serialization of json objects. It will convert json string to a data class objects. But the unique part of this is it will dynamically build an object based on Schema.
 
 The currently supported schemas are:  
- 
-| Schema enumeration      | Schema value | Data object class
-| ----- | ------- | ------ |
-| MOBILE | https://cebu.onecms.slot.mobile | `MobileContent`
-| PAGE | https://cebu.onecms.content.page | `PageContent`
-| DYNAMIC_PAGE | https://cebu.onecms.content.dynamicpage | `DynamicPageContent`
-| SECTION_BLOCK | https://cebu.onecms.content.sectionblock | `SectionBlockContent`
-| IMAGE_AND_TEXT | https://cebu.onecms.content.imageandtext | `ImageAndTextContent`
-| MESSAGE | https://cebu.onecms.content.message | `MessageContent`
-| IMAGE | https://cebu.onecms.content.image | `ImageContent`
-| LINK | https://cebu.onecms.content.link | `LinkContent`
-| BANNER | https://cebu.onecms.content.banner | `BannerContent`
-| IMAGE_CAROUSEL | https://cebu.onecms.content.imagecarousel | `ImageCarouselContent`
-| BANNER_CAROUSEL | https://cebu.onecms.content.bannercarousel | `BannerCarouselContent`
-| PROMOTIONAL_IMAGE | https://cebu.onecms.content.promotionalimage | `PromotionalImage`
-| TEXT_CONTENT | https://cebu.onecms.content.textcontent | `TextContent`
-| TRAVEL_REMINDER | https://cebu.onecms.content.travelreminder | `TravelReminderContent`
-| HEADER | https://cebu.onecms.content.header | `HeaderContent`
-| SOCIAL_MEDIA_LINKS | https://cebu.onecms.content.socialmedialinks | `SocialMediaLinksContent`
-| HERO_BANNER | https://cebu.onecms.content.herobanner | `HeroBannerContent`
-| NAVIGATION_MENU | https://cebu.onecms.content.navigationmenu | `NavigationMenuContent`
-| BANNER_NAVIGATION_LINKS | https://cebu.onecms.content.bannernavigationlinks | `BannerNavigationLinksContent`
-| BANNER_NAVIGATION_LINKS_AND_TEXT | https://cebu.onecms.content.bannernavigationlinksandtextcontent | `BannerNavigationLinksAndTextContent`
-| IMAGE_GRID | https://cebu.onecms.content.imagegrid | `ImageGridContent`
-| IMAGE_GRID_CAROUSEL | https://cebu.onecms.content.imagegridcarousel | `ImageGridCarouselContent`
-| FLIGHT_MAP | https://cebu.onecms.content.flightmap | `FlightMapContent`
-| REGION | https://cebu.onecms.content.region | `RegionContent`
-| ARTICLE_LIST | https://cebu.onecms.content.articlelist | `ArticleListContent`
-| ARTICLE | https://cebu.onecms.content.article | `ArticleContent`
-| IMAGE_LINK | http://bigcontent.io/cms/schema/v1/core#/definitions/image-link | `ImageLinkContent`
-| LOCALIZED_VALUE | http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value |  
+
+|Data object class|Schema enumeration           |Schema value|
+|-----------------|-----------------------------|------------|
+|MobileContent    |MOBILE                       |https://cebu.onecms.slot.mobile|
+|PageContent      |PAGE                         |https://cebu.onecms.content.page|
+|DynamicPageContent|DYNAMIC_PAGE                 |https://cebu.onecms.content.dynamicpage|
+|SectionBlockContent|SECTION_BLOCK                |https://cebu.onecms.content.sectionblock|
+|ImageAndTextContent|IMAGE_AND_TEXT               |https://cebu.onecms.content.imageandtext|
+|MessageContent   |MESSAGE                      |https://cebu.onecms.content.message|
+|ImageContent     |IMAGE                        |https://cebu.onecms.content.image|
+|LinkContent      |LINK                         |https://cebu.onecms.content.link|
+|BannerContent    |BANNER                       |https://cebu.onecms.content.banner|
+|ImageCarouselContent|IMAGE_CAROUSEL               |https://cebu.onecms.content.imagecarousel|
+|BannerCarouselContent|BANNER_CAROUSEL              |https://cebu.onecms.content.bannercarousel|
+|PromotionalImage |PROMOTIONAL_IMAGE            |https://cebu.onecms.content.promotionalimage|
+|TextContent      |TEXT_CONTENT                 |https://cebu.onecms.content.textcontent|
+|TravelReminderContent|TRAVEL_REMINDER              |https://cebu.onecms.content.travelreminder|
+|HeaderContent    |HEADER                       |https://cebu.onecms.content.header|
+|SocialMediaLinksContent|SOCIAL_MEDIA_LINKS           |https://cebu.onecms.content.socialmedialinks|
+|HeroBannerContent|HERO_BANNER                  |https://cebu.onecms.content.herobanner|
+|NavigationMenuContent|NAVIGATION_MENU              |https://cebu.onecms.content.navigationmenu|
+|BannerNavigationLinksContent|BANNER_NAVIGATION_LINKS      |https://cebu.onecms.content.bannernavigationlinks|
+|BannerNavigationLinksAndTextContent|BANNER_NAVIGATION_LINKS_AND_TEXT|https://cebu.onecms.content.bannernavigationlinksandtextcontent|
+|ImageGridContent |IMAGE_GRID                   |https://cebu.onecms.content.imagegrid|
+|ImageGridCarouselContent|IMAGE_GRID_CAROUSEL          |https://cebu.onecms.content.imagegridcarousel|
+|FlightMapContent |FLIGHT_MAP                   |https://cebu.onecms.content.flightmap|
+|RegionContent    |REGION                       |https://cebu.onecms.content.region|
+|ArticleListContent|ARTICLE_LIST                 |https://cebu.onecms.content.articlelist|
+|ArticleContent   |ARTICLE                      |https://cebu.onecms.content.article|
+|ImageLinkContent |IMAGE_LINK                   |http://bigcontent.io/cms/schema/v1/core#/definitions/image-link|
+|                 |LOCALIZED_VALUE              |http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value|
 
 Example flow:
 
