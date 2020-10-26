@@ -70,7 +70,15 @@ Assume the field `content` is a list of meta content. The parser will use data c
 
 # Extensions and Utilities
 
-Custom created extensions
+Below are the currently supported helpers:
+
+- [ ] Build a link from `ImageLinkContent` and `ImageContent`
+- [ ] Get specific image (`ImageCarouselContent`) by `externalIdentifier`
+- [ ] Retrieve all page contents from `MobileContent`
+- [ ] Get `SectionBlockContent` by meta name
+- [ ] Get specified content from `PageContent` by meta name
+- [ ] Get locale value by locale (defaule: `en-PH`)
+- [X] Saving and Retrieving json to objects (vice versa)
 
 ### Saving and Retrieving data object classes in shared preferences
 
