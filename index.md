@@ -68,6 +68,10 @@ data class MobileContent(
 
 Assume the field `content` is a list of meta content. The parser will use data class `BaseContent` as a source of magic. It will search for a registered schema and build it dynamically. 
 
+# How to create and register a new schema
+
+TODO
+
 # Extensions and Utilities
 
 Below are the currently supported helpers:
